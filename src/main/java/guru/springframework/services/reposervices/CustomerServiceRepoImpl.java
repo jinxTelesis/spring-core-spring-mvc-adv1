@@ -31,8 +31,6 @@ public class CustomerServiceRepoImpl implements CustomerService {
         return customers;
     }
 
-
-
     @Override
     public Customer getById(Integer id) {
         return customerRepository.findOne(id);
