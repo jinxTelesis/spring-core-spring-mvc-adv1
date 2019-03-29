@@ -7,6 +7,7 @@ import guru.springframework.services.ProductService;
 import guru.springframework.services.RoleService;
 import guru.springframework.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -25,7 +26,7 @@ public class SpringJPABootstrap implements ApplicationListener<ContextRefreshedE
     private RoleService roleService;
 
     @Autowired
-    public void setProductService(ProductService productService) {
+    public void setProductService(@Qualifier("productServiceImpl") ProductService productService) {
         this.productService = productService;
     }
 

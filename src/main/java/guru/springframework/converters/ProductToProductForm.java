@@ -3,7 +3,9 @@ package guru.springframework.converters;
 import guru.springframework.commands.ProductForm;
 import guru.springframework.domain.Product;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProductToProductForm implements Converter<Product, ProductForm> {
 
     @Override

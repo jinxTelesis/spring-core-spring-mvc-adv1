@@ -5,6 +5,7 @@ import guru.springframework.converters.ProductToProductForm;
 import guru.springframework.domain.Product;
 import guru.springframework.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,7 +24,7 @@ public class ProductController {
     private ProductToProductForm productToProductForm;
 
     @Autowired
-    ProductController(ProductService productService, ProductToProductForm productToProductForm)
+    ProductController(@Qualifier("productServiceImpl")ProductService productService, ProductToProductForm productToProductForm)
     {
         this.productService = productService;
         this.productToProductForm = productToProductForm;

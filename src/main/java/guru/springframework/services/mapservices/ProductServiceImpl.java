@@ -1,5 +1,6 @@
 package guru.springframework.services.mapservices;
 
+import guru.springframework.commands.ProductForm;
 import guru.springframework.domain.DomainObject;
 import guru.springframework.domain.Product;
 import guru.springframework.services.ProductService;
@@ -35,4 +36,8 @@ public class ProductServiceImpl extends AbstractMapService implements ProductSer
         super.delete(id);
     }
 
-   }
+    @Override
+    public Product saveOrUpdateProductForm(ProductForm productForm) {
+        return null;
+    }
+}
