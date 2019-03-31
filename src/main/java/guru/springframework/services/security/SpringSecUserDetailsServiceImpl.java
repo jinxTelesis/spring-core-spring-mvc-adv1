@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 @Service("userDetailsService")
 public class SpringSecUserDetailsServiceImpl implements UserDetailsService {
 
+
+
     private UserService userService;
     private Converter<User, UserDetails> userUserDetailsConverter;
 
