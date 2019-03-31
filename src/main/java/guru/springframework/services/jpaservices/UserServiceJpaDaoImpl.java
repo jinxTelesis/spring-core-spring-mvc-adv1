@@ -27,6 +27,8 @@ public class UserServiceJpaDaoImpl extends AbstractJpaDaoService implements User
     @Override
     public List<?> listAll() {
         EntityManager em = emf.createEntityManager();
+        // these queries are out of date
+
 
         return em.createQuery("from User", User.class).getResultList();
     }
@@ -61,5 +63,13 @@ public class UserServiceJpaDaoImpl extends AbstractJpaDaoService implements User
         em.getTransaction().begin();
         em.remove(em.find(User.class, id));
         em.getTransaction().commit();
+    }
+
+    @Override
+    public User findByUserName(String userName) {
+        EntityManager em = emf.createEntityManager();
+
+
+        return em.createQuery("from User where username = :userName", User.class).getSingleResult();
     }
 }
