@@ -32,6 +32,13 @@ public class User extends AbstractDomainClass  {
     //     inverseJoinColumns = @joinColumn(name = "role_id"))
     private List<Role> roles = new ArrayList<>();
 
+    private Integer failedLoginAttempts = 0;
+
+
+    public void setFailedLoginAttempts(Integer failedLoginAttempts) {
+        this.failedLoginAttempts = failedLoginAttempts;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -88,6 +95,11 @@ public class User extends AbstractDomainClass  {
     public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
+
+    public Integer getFailedLoginAttempts() {
+        return failedLoginAttempts;
+    }
+
 
     public void addRole(Role role){
         if(!this.roles.contains(role)){
